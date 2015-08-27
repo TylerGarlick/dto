@@ -9,7 +9,8 @@ module.exports = function () {
       'test/**/*.tests.js'
     ],
     env: {
-      type: 'node'
+      type: 'node',
+      runner: 'node'
     }
   }
 };
