@@ -1,22 +1,21 @@
 'use strict';
 
-var expect = require('chai').expect;
-var DTO = require('../lib');
+var dto = require('../lib');
 
-describe('Projection', function () {
+describe('Projection', function() {
 
-  var dto;
-  before(function () {
-    dto = new DTO();
-    expect(dto).to.be.ok;
-  });
+  describe('#take', function() {
 
-  it('should have a #projections property', function () {
-    expect(dto.projection).to.be.ok;
-  });
+    it('should take only', function() {
+      let person = { name: { first: 'Bob', last: 'Sagot' }, age: 50 };
+      expect(dto.take.only(person, ['age'])).to.be.eql({ age: 50 });
+    });
 
-  it('should have a #transformer property', function () {
-    expect(dto.transformer).to.be.ok;
+    it('should return without', function() {
+      let person = { name: { first: 'Bob', last: 'Sagot' }, age: 50 };
+      expect(dto.take.without(person, ['age'])).to.be.eql({ name: { first: 'Bob', last: 'Sagot' } });
+    });
+
   });
 
 });

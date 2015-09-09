@@ -1,0 +1,5 @@
+--recursive
+--colors
+--require ./test/_helper.js
+--harmony
+--reporter min

@@ -3,7 +3,9 @@
 module.exports = function () {
   return {
     files: [
-      'lib/**/*'
+      'lib/**/*',
+      'test/**/*',
+      { pattern: 'test/**/*.tests.js', ignore: true }
     ],
     tests: [
       'test/**/*.tests.js'
@@ -11,6 +13,9 @@ module.exports = function () {
     env: {
       type: 'node',
       runner: 'node'
+    },
+    bootstrap: function() {
+      require('./test/_helper')
     }
   }
 };

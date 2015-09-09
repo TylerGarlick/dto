@@ -26,11 +26,13 @@
     "mocha": "^2.2.5"
   },
   "dependencies": {
+    "enjoi": "^1.0.0",
     "hoek": "^2.14.0",
+    "joi": "^6.6.1",
     "json-ptr": "^0.2.0",
     "lazy.js": "^0.4.0"
   },
   "engines": {
-    "node": "^1.0.0"
+    "node": "^3.0.0"
   }
 }
